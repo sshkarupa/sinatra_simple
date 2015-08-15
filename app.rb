@@ -4,7 +4,8 @@ require 'slim'
 require 'sass'
 
 
-get('/styles.css'){ sass :styles, :style => :compressed, :views => './' }
+# get('/styles.css'){ sass :styles, :style => :compressed, :views => './' }
+get('/styles.css'){ content_type 'text/css', :charset => 'utf-8' ; sass :styles, :style => :compressed }
 
 
 helpers do
